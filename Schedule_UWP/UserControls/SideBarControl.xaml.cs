@@ -23,5 +23,17 @@ namespace Schedule_UWP
         {
             this.InitializeComponent();
         }
+
+        private void UIElement_OnTapped(object sender, TappedRoutedEventArgs e)
+        {
+            OnTeacherListTapped();
+        }
+
+        public event EventHandler TeacherListTapped = delegate { };
+
+        private void OnTeacherListTapped()
+        {
+            TeacherListTapped(this, EventArgs.Empty);
+        }
     }
 }

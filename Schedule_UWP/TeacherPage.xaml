@@ -17,8 +17,8 @@
             <ColumnDefinition Width="6*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <local:ToolBarControl x:Name="toolBar" Grid.Row="0" Grid.ColumnSpan="3"/>
-        <local:SideBarControl x:Name="sideBar" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Collapsed"/>
-        <UserControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan ="3"/>
+        <local:ToolBarControl x:Name="ToolBar" Grid.Row="0" Grid.ColumnSpan="3"/>
+        <local:SideBarControl x:Name="SideBar" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Collapsed"/>
+        <UserControl x:Name="UserControl" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan ="3" Tapped="UserControl_OnTapped"/>
     </Grid>
 </Page>

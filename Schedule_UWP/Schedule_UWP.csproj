@@ -100,13 +100,16 @@
     </Compile>
     <Compile Include="Models\ScheduleContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SideBarControl.xaml.cs">
+    <Compile Include="UserControls\SideBarControl.xaml.cs">
       <DependentUpon>SideBarControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="TeacherPage.xaml.cs">
       <DependentUpon>TeacherPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ToolBarControl.xaml.cs">
+    <Compile Include="UserControls\TeacherListControl.xaml.cs">
+      <DependentUpon>TeacherListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ToolBarControl.xaml.cs">
       <DependentUpon>ToolBarControl.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -135,7 +138,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SideBarControl.xaml">
+    <Page Include="UserControls\SideBarControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -143,7 +146,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ToolBarControl.xaml">
+    <Page Include="UserControls\TeacherListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ToolBarControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,6 +164,10 @@
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{847b01e6-15d1-4f6a-81b8-61e8c693c743}</Project>
       <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScheduleApi\ScheduleApi.csproj">
+      <Project>{203af23f-e3ae-4f9d-99ac-4bbfa30ec0a4}</Project>
+      <Name>ScheduleApi</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

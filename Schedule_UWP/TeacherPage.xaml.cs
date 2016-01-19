@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Input;
+using Models;
+using ScheduleApi;
+using Schedule_UWP;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -11,19 +16,39 @@ namespace Schedule_UWP
     /// </summary>
     public sealed partial class TeacherPage : Page
     {
+        private readonly TeacherScheduleApi _scheduleApi;
+
         public TeacherPage()
         {
             InitializeComponent();
 
-            toolBar.ButtonToolBar += OpenCloseSideBar;
+            _scheduleApi = new TeacherScheduleApi();
+
+            ToolBar.ButtonToolBar += OpenCloseSideBar;
+            SideBar.TeacherListTapped += OpenTeacherList;
+        }
+
+        private void OpenTeacherList(object sender, EventArgs e)
+        {
+            //List<Teacher> teachers = await _scheduleApi.GetListObjectsAsync<Teacher>();
+
+            UserControl = new TeacherListControl();
+
+            UpdateLayout();
         }
 
         private void OpenCloseSideBar(object sender, EventArgs e)
         {
-            if (sideBar.Visibility == Visibility.Collapsed)
-                sideBar.Visibility = Visibility.Visible;
+            if (SideBar.Visibility == Visibility.Collapsed)
+                SideBar.Visibility = Visibility.Visible;
             else
-                sideBar.Visibility = Visibility.Collapsed;
+                SideBar.Visibility = Visibility.Collapsed;
+        }
+
+        private void UserControl_OnTapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (SideBar.Visibility == Visibility.Visible)
+                SideBar.Visibility = Visibility.Collapsed;
         }
     }
 }
