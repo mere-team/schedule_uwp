@@ -7,7 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="#00313030">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,145,0,0" TextWrapping="Wrap" Text="Расписание УлГТУ" VerticalAlignment="Top" Height="89" Width="340" TextAlignment="Center" Foreground="Azure" FontSize="32"/>
+        <Button x:Name="buttonTeacher" Content="Для преподавателей" HorizontalAlignment="Left" Margin="10,288,0,0" VerticalAlignment="Top" Width="340" Foreground="Azure" Click="ButtonTeacher_OnClick"/>
+        <Button x:Name="buttonStudent" Content="Для студентов" HorizontalAlignment="Left" Margin="10,341,0,0" VerticalAlignment="Top" Width="340" Foreground="Azure"/>
 
     </Grid>
 </Page>
