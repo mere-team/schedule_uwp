@@ -19,5 +19,11 @@ namespace Models
 
         [JsonIgnore]
         public virtual ICollection<Lesson> Lessons { get; set; }
+
+
+        public override string ToString()
+        {
+            return Id + " " + Name + " " + Cathedra;
+        } 
     }
 }
